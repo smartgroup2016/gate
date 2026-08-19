@@ -34,7 +34,7 @@ jobs:
           # Check if the file has changed
           if git diff --quiet vpn_servers.txt; then
             echo "No changes detected. Skipping commit."
-            exit 0
+          #  exit 0
           fi
           
           # Stage, commit, and push
