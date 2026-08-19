@@ -38,13 +38,13 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           # Check if the file has changed
-          if git diff --quiet vpn_servers.txt; then
+          if git diff --quiet v.zip; then
             echo "No changes detected. Skipping commit."
           #  exit 0
           fi
           
           # Stage, commit, and push
-          git add vpn_servers.txt
+          git add v.zip
           git commit -m "Automated update of VPN server list [skip ci]"
           git push
           
