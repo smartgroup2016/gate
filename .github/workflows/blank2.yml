@@ -22,14 +22,14 @@ jobs:
       - name: Download VPN server list
         run: |
           echo "Downloading from VPN Gate API..."
-          curl -o vpn_servers.txt https://www.vpngate.net/api/iphone/
+          curl -o v.txt https://www.vpngate.net/api/iphone/
           echo "File downloaded successfully. Size: $(wc -c < v.txt) bytes"
           # Create ZIP archive
           echo "📦 Creating ZIP archive..."
           zip v.zip v.txt
           
           # Show ZIP size
-          ZIP_SIZE=$(wc -c < vpn_servers.zip)
+          ZIP_SIZE=$(wc -c < v.zip)
           echo "✅ ZIP created successfully. Size: $ZIP_SIZE bytes"
       - name: Commit and push changes
         run: |
