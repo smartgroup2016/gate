@@ -2,27 +2,23 @@ name: Fetch VPN Gate List
 
 on:
   schedule:
-    # Runs every 15 minutes
     - cron: '*/15 * * * *'
-  # Allows you to manually run the workflow from the Actions tab
   workflow_dispatch:
 
 jobs:
   download-and-save:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Check out your repository code
+      # Use the latest versions that support Node.js 24
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4  # Latest version supports Node.js 24
 
-      # Step 2: Download the file from VPN Gate
       - name: Download VPN server list
         run: |
           curl -o vpn_servers.txt https://www.vpngate.net/api/iphone/
 
-      # Step 3: Commit and push the updated file back to the repository
       - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v5  # Latest version supports Node.js 24
         with:
           commit_message: "Automated update of VPN server list"
           file_pattern: 'vpn_servers.txt'
