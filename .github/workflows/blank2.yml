@@ -2,7 +2,7 @@ name: Fetch VPN Gate List
 
 on:
   schedule:
-    - cron: '*/59 * * * *'
+    - cron: '*/30 * * * *'  # Runs every 30 minutes
   workflow_dispatch:
 
 env:
